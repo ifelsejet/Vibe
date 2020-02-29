@@ -1,8 +1,22 @@
 html, body {
   height: 100%;
+  background: rgb(0,0,0);
+  background: linear-gradient(90deg, rgba(0,0,0,1) 0%, rgba(136,136,136,1) 35%, rgba(255,255,255,1) 100%);
+  animation: change 10s ease-in-out infinite;
 }
 
-.panel {
-  height: 50%;
-  width: 75%;
+.content {
+
+}
+
+@keyframes change {
+  0%{
+    background-position: 0 50%;
+  }
+  50%{
+    background-position: 100% 50%;
+  }
+  100%{
+    background-position: 0 50%;
+  }
 }

@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" dir="ltr">
+<html lang="en" dir="ltr" >
   <head>
     <meta charset="utf-8">
     <title>Vibe</title>
@@ -12,18 +12,34 @@
 
 
   </head>
-  <body>
-    <div class="container h-100 d-flex justify-content-center">
-      <div class="jumbotron my-auto panel border">
-        <h2>Now Playing:</h2>
-        <p id="title"></p>
-        <button class="btn btn-primary" onclick="playHappy()">Play Happy</button>
-        <button class="btn btn-primary" onclick="playSad()">Play Sad</button>
+  <body onload="initPlayer()">
+    <div class="container d-flex flex-column justify-content-center content">
+
+      <div class="jumbotron-fluid mt-5 h-25 w-75 mx-auto border panel rounded-sm">
+        <div class="container-fluid my-auto pt-4">
+          <h2 class="pl-5">Now Playing:</h2>
+          <div class="text-center">
+            <h2 id="title">N/A</h2>
+            <h3 id="artist">By: N/A</h3>
+          </div>
+
+          <div class="text-center pb-3">
+            <button class="btn btn-outline-light" onclick="togglePlay()" id="playStatusBtn">Play</button>
+          </div>
+          <!--
+          <button hidden class="btn btn-primary" onclick="playHappy()">Play Happy</button>
+          <button hidden class="btn btn-primary" onclick="playSad()">Play Sad</button>
+          -->
+        </div>
       </div>
 
-      <audio src="" id="music" autoplay></audio>
+      <div class="jumbotron-fluid mt-3 pt-3 pb-3 mb-4 mx-auto w-75 text-center border panel rounded-sm justify-content-center" id="vid-controls">
+        <video class="mx-auto" id="vid-show" autoplay></video>
+        <input id="vid-take" class="btn btn-primary" value="What's the Vibe?"/>
+        <div id="vid-canvas"></div>
+      </div>
+
+      <audio src="" id="music"></audio>
     </div>
-
-
   </body>
 </html>
