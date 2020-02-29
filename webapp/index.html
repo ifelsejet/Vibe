@@ -21,7 +21,6 @@
             <h2 id="title">N/A</h2>
             <h3 id="artist">By: N/A</h3>
           </div>
-
           <div class="text-center">
             <button class="btn btn-outline-light" onclick="togglePlay()" id="playStatusBtn">Play</button>
           </div>
@@ -31,7 +30,11 @@
       </div>
       <audio src="" id="music"></audio>
     </div>
-
+    <div id="vid-controls">
+      <video id="vid-show" autoplay></video>
+      <input id="vid-take" class="btn btn-primary" value="What's the Vibe?"/>
+      <div id="vid-canvas"></div>
+    </div>
 
   </body>
 </html>
