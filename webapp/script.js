@@ -8,19 +8,49 @@ var sadArtists = ["Bruno Mars", "gnash ft. olivia o-brien", "Green Day", "A Grea
 let url = "../music";
 //let suffix = "?autoplay=1&muted=0";
 
-
+function initPlayer() {
+  playHappy();
+  togglePlay(); //since playHappy() already calls togglePlay(), this will just pause the player again (big brain)
+  document.getElementById("playStatusBtn").innerHTML = "Play";
+}
 
 function playHappy() {
-  console.log("happy");
-  i = Math.floor(Math.random() * happyTitles.length)+1;
-  document.getElementById("music").src = url + "/happy/" + i + ".mp3";
-  console.log(url + "/happy/" + i + ".mp3");
-
+  setTrack("happy");
+  togglePlay();
 }
 
 function playSad() {
-  console.log("sad");
-  i = Math.floor(Math.random() * sadTitles.length)+1;
-  document.getElementById("music").src = url + "/sad/" + i  + ".mp3";
-  console.log(url + "/sad/" + i + + ".mp3");
+  setTrack("sad");
+  togglePlay();
+}
+
+function togglePlay() {
+  let ele = document.getElementById("music");
+  let btn = document.getElementById("playStatusBtn");
+  if(ele.paused) {
+    ele.play();
+    btn.innerHTML = "Pause";
+  } else {
+    ele.pause();
+    btn.innerHTML = "Play";
+  }
+}
+
+var prevIndex = -1;
+var i = -1;
+function genNewIndex(dir) {
+  while(i == prevIndex) {
+    i = Math.floor(Math.random() * eval(dir+"Titles").length);
+  }
+  prevIndex = i;
+  return i;
+}
+
+function setTrack(dir) {
+  console.log(dir);
+  i = genNewIndex(dir);
+  document.getElementById("music").src = url + "/" + dir + "/" + i  + ".mp3";
+  console.log(url + "/" + dir + "/" + i + ".mp3");
+  document.getElementById("title").innerHTML = eval(dir+"Titles")[i];
+  document.getElementById("artist").innerHTML = "By: " + eval(dir+"Artists")[i];
 }
