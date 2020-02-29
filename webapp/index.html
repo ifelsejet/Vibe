@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" dir="ltr">
+<html lang="en" dir="ltr" >
   <head>
     <meta charset="utf-8">
     <title>Vibe</title>
@@ -14,15 +14,15 @@
   </head>
   <body onload="initPlayer()">
     <div class="container h-100 d-flex justify-content-center">
-      <div class="jumbotron-fluid my-auto h-25 w-75 border">
+      <div class="jumbotron-fluid my-auto h-25 w-75 border panel rounded-pill">
         <div class="container-fluid my-auto pt-4">
-          <h2 class="">Now Playing:</h2>
+          <h2 class="pl-5">Now Playing:</h2>
           <div class="text-center">
             <h2 id="title">N/A</h2>
             <h3 id="artist">By: N/A</h3>
           </div>
           <div class="text-center">
-            <button class="btn btn-primary" onclick="togglePlay()" id="playStatusBtn">Play</button>
+            <button class="btn btn-outline-light" onclick="togglePlay()" id="playStatusBtn">Play</button>
           </div>
           <button hidden class="btn btn-primary" onclick="playHappy()">Play Happy</button>
           <button hidden class="btn btn-primary" onclick="playSad()">Play Sad</button>
