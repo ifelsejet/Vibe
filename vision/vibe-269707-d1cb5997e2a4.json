@@ -1,0 +1,12 @@
+{
+  "type": "service_account",
+  "project_id": "vibe-269707",
+  "private_key_id": "d1cb5997e2a41201e538906fa9ba772f1a9b448a",
+  "private_key": "-----BEGIN PRIVATE KEY-----\nMIIEvgIBADANBgkqhkiG9w0BAQEFAASCBKgwggSkAgEAAoIBAQDY2zERITbA0O+d\nfRdxF+eYnwyCBVJeVaPMs+5iTPF6nuRlz8gfvTdbBgUN+YBFPPTnQODu+6uEy40m\nCNs7nk/xdHNzl1bgfMSu8Qgyon5Yd2Iadjx/BRmFmkT0PfHKPv12MKTP5e4FlKXi\nPDm0hDfYM8Ne9fcH1h+4sJpP5HTq7N9/IPFzNqwRNVTXEDNyLlYhs5r1CWkWtze8\naLU+zc2AI59bZjYnfaxUvk+fFHlJMoioZP+B8UI48/ePzii+hZ3KEgWlc8r2KSmj\nfIQ7wAAn4erDllywYQYJMbuFvgx1OxhDM6bCjsgAvK2Kyo846uoJtpWSuflzOEPg\nEsl+PAmHAgMBAAECggEAXMTIJM/UoH/BQdo1oQfc54mCzEyChCCWxgdjP2IzG4XF\np1hQAGPtvl7A4s2NdhExo4w5rYK0SUbaxx6aytJa2Kw8h4KCg95cNYqfOyoQasAH\nk9Jo5t3DoUfxn5qwSRjRTTJaDyYJwRFqNXIWLYcybKcYORN37j5Hq7bBDNRqv+Rz\nm3tSe/GqfKBfobcgK8mLhQBr69magFCByOCjApv24jQ13ijtH35KVXfHVb/e75yB\nfbKDBVRwEIIL4LmoNY4rZgsTak4jBeiYRwYN0G5Z+1isTkK9ZWlBAiqJeS6yJFdS\nXzXM4ScMfjINQEs8IkYH8YK9pL/ARJSoV22QPdsNgQKBgQD2iwy7GEWxBiA8WZq8\nor6YhyOp4fUoBDWp3BHIg3BY1gOzkHkDosVJwGGrhBDn8eDRluJtj2/DCxp9ENDl\nxmo5A4ZftHJXp5PA2KPRtgblLXHARUcydO7yJYPJK2x/fXR5UcZfeJ3cQglHpw3X\npP9WkGaTaXLNK+DrKafMXynVFwKBgQDhLKDsU6vtXLmZebVKqYInwdOc9MlSL0vh\nboHXjfl5gKQjlJbS0gxD3Vrhaojy5xWoqFsnVXSgoHsFz8R1H9xFSh7dci20uMze\nu72WqwNWbLLvltNsVxIIY7OvL9bMT2J7hxpB7eZsX2v2ERib14s0S5iNwy3s3oHs\n9vBzwhYVEQKBgQDMwY0QMcdnjzvkg1KUyeDbUpkW9TejRWPAL6qBSlBbJ1spnZoz\nn9KUPvee9+8Gg4cA6nwhG9hpN2aHahjkTFZaBYhrIbU5AU8gAYyEldXCLmzjj2Xj\nDOSKLQf3Yl4Yv/uk6nqDPex1Sk7kuGQxrbH2lbTrRs92gLOq+wyGGp7mfwKBgQCL\njodmMS17fV6immYcEhbS4TRwMN6diyayXzUmDZ4zCeGxE6SuoPRtE0ICN28NbN9l\nmoJ0TGhuLUhR/8U4+jgg0aFzihJ90ZNX8G++c9srs07rY0VB/mz0uiZhS3sLQaA+\nAyvo9LM9M57L8SiZXeuuy7OPGQrbpcRMw3efpwjcoQKBgAEcsOBSbi6JI7Kc8DnV\nIJUXAjciiKhL7ZZT2n0fnzE+8KKuRCa14yXoKcEaHdRnxByA+GvG4Wp4pkd2vD6k\n1dCRsXmY7ul3yhc6DRPD+TTwckiojDCLYgNvReq0kAfOMDhKKXlBf9JUAqWSnw9L\nZXkxNq7Lx+uI96Tn2yjo9uV/\n-----END PRIVATE KEY-----\n",
+  "client_email": "vibetest@vibe-269707.iam.gserviceaccount.com",
+  "client_id": "109811396747008283533",
+  "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+  "token_uri": "https://oauth2.googleapis.com/token",
+  "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
+  "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/vibetest%40vibe-269707.iam.gserviceaccount.com"
+}
