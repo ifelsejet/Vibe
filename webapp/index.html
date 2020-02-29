@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Vibe</title>
+
+    <!--Importing Bootstrap 4 and JQuery-->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js"></script>
+
+
+  </head>
+  <body>
+    <div class="container h-100 d-flex justify-content-center">
+      <div class="jumbotron my-auto panel border">
+        <h2>Now Playing:</h2>
+        <p id="title"></p>
+        <button class="btn btn-primary" onclick="playHappy()">Play Happy</button>
+        <button class="btn btn-primary" onclick="playSad()">Play Sad</button>
+      </div>
+
+      <audio src="" id="music" autoplay></audio>
+    </div>
+
+
+  </body>
+</html>
