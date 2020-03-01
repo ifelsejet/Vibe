@@ -11,7 +11,6 @@ const firebaseConfig = {
 // Initialize Firebase
 firebase.initializeApp(firebaseConfig);
 const storage = firebase.storage();
-const db = firebase.firestore();
 
 
 
@@ -185,7 +184,7 @@ storageRef.put(file).then(function() {
       console.log(url2)
 
             console.log("run bitch");
-            firebase.database().ref('Posts/info').set({
+            firebase.database().ref('PiData/NewInfo').set({
                 img: url2
             });
             
