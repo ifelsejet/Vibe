@@ -33,9 +33,9 @@ function playSad() {
 }
 
 function playAngry() {
-  //setTrack("angry");
+  setTrack("angry");
   setBg("angry");
-  //togglePlay();
+  togglePlay();
 }
 
 function togglePlay() {
