@@ -58,9 +58,7 @@ function playAngry() {
 function togglePlay() {
   let ele = document.getElementById("music");
   let btn = document.getElementById("playStatusBtn");
-  var playPromise = ele.play();
-  if (playPromise !== undefined) {
-    playPromise.then(_ => {
+
       
       if(ele.paused) {
         ele.muted = false;
@@ -70,15 +68,7 @@ function togglePlay() {
         ele.pause();
         btn.innerHTML = "Play";
       }
-    })
-    .catch(error => {
-      // Auto-play was prevented
-      // Show paused UI.
-      console.log(error);
-      ele.pause();
-      btn.innerHTML = "Play";
-    });
-  }
+
  
 }
 
