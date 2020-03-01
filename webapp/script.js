@@ -1,3 +1,20 @@
+const firebaseConfig = {
+  apiKey: "AIzaSyAOlXkSpNIMUZFFiAEvUBts7ttexz90zL0",
+  authDomain: "vibe-269707.firebaseapp.com",
+  databaseURL: "https://vibe-269707.firebaseio.com",
+  projectId: "vibe-269707",
+  storageBucket: "vibe-269707.appspot.com",
+  messagingSenderId: "129843277105",
+  appId: "1:129843277105:web:6f976526c34fc66bd01410",
+  measurementId: "G-MR7QZXDVDS"
+};
+// Initialize Firebase
+firebase.initializeApp(firebaseConfig);
+const storage = firebase.storage();
+const db = firebase.firestore();
+
+
+
 //Setting up hard-coded arrays for video playback and video information
 let happyTitles = ["Happy", "Uptown Funk", "CAN'T STOP THE FEELING", "Shake It Off", "Shape of You"];
 let happyArtists = ["Pharrell Williams", "Mark Ronson ft. Bruno Mars", "Justin Timberlake", "Taylor Swift", "Ed Sheeran"];
@@ -44,13 +61,18 @@ function playAngry() {
 function togglePlay() {
   let ele = document.getElementById("music");
   let btn = document.getElementById("playStatusBtn");
-  if(ele.paused) {
-    ele.play();
-    btn.innerHTML = "Pause";
-  } else {
-    ele.pause();
-    btn.innerHTML = "Play";
-  }
+
+      
+      if(ele.paused) {
+        ele.muted = false;
+        ele.play();
+        btn.innerHTML = "Pause";
+      } else {
+        ele.pause();
+        btn.innerHTML = "Play";
+      }
+
+ 
 }
 
 var prevIndex = -1;
@@ -107,9 +129,81 @@ window.addEventListener("load", function(){
       // Put into canvas container
       canvas.innerHTML = "";
       canvas.appendChild(draw);
+      
+    //  console.log(typeof blob);
+    var storageRef = storage.ref("images/");
+    draw.toBlob(function(blob){
+
+      var image = new Image();
+      var delayInMilliseconds = 1000; //1 second
+
+        setTimeout(function() {
+          //your code to be executed after 1 second
+          
+          image.src = blob;
+        }, delayInMilliseconds);
+        
+        //var uploadTask = storageRef.put(blob);
+      
+      
+      
+      
+      
+    })
+    
+      /*storageRef.put(IMG_).then(function() {
+        console.log("pic ");
+      });*/
+      
+
+      
     });
   })
   .catch(function(err) {
     document.getElementById("vid-controls").innerHTML = "Please enable access and attach a camera";
+  });
+});
+
+
+
+
+
+var fileUploadEvent = document.getElementById('browse');
+fileUploadEvent.addEventListener('change', function(e){
+
+var file = e.target.files[0];
+var storageRef = storage.ref(file.name);
+var fileName = "" + file.name;
+
+
+
+//store image in firebase storage
+storageRef.put(file).then(function() {
+    
+    //get download url for image and store to firestore
+    storage.ref().child(fileName).getDownloadURL().then(function(url) { 
+        var Image = document.getElementById('image')
+        
+        Image.src = url
+        Image.className = "resize";
+
+
+        
+            console.log("run bitch");
+            db.collection('Posts').doc().set({
+                Img: url
+                
+            }).then(
+                
+            )
+            
+            //window.location.href = "../index.html";
+        
+        
+        
+        
+    })
+
+
   });
 });
