@@ -13,6 +13,9 @@ let happyParams = "270deg, #e9ec5e, #ff2278";
 let sadParams = "270deg, #02bee8, #7a33bf";
 let angryParams = "270deg, #840029, #a91834, #f64d52";
 
+var canvas = 
+
+
 
 function initPlayer() {
   playHappy();
