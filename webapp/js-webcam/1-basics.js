@@ -22,8 +22,14 @@ window.addEventListener("load", function(){
       context2D.drawImage(video, 0, 0, video.videoWidth, video.videoHeight);
       // Put into canvas container
       canvas.innerHTML = "";
+
+      console.log(canvas.toDataURL());
+      var link = document.createElement('a');
+      link.href = canvas.toDataURL();
+      link.download = "emotion.jpg";
+
+
       canvas.appendChild(draw);
-    });
   })
   .catch(function(err) {
     document.getElementById("vid-controls").innerHTML = "Please enable access and attach a camera";
