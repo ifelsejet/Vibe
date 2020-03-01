@@ -1,13 +1,17 @@
 //Setting up hard-coded arrays for video playback and video information
-let happyTitles = ["Happy", "Uptown Funk", "CAN'T STOP THE FEELING"];
-let happyArtists = ["Pharrell Williams", "Mark Ronson ft. Bruno Mars", "Justin Timberlake"]
+let happyTitles = ["Happy", "Uptown Funk", "CAN'T STOP THE FEELING", "Shake It Off", "Shape of You"];
+let happyArtists = ["Pharrell Williams", "Mark Ronson ft. Bruno Mars", "Justin Timberlake", "Taylor Swift", "Ed Sheeran"];
 
-let sadTitles = ["When I Was Your Man", "i hate u, i love u", "Wake Me Up When September Ends", "Say Something"];
-let sadArtists = ["Bruno Mars", "gnash ft. olivia o-brien", "Green Day", "A Great Big World & Christina Aguilera"];
+let sadTitles = ["When I Was Your Man", "i hate u, i love u", "Wake Me Up When September Ends", "Say Something", "Hello"];
+let sadArtists = ["Bruno Mars", "gnash ft. olivia o-brien", "Green Day", "A Great Big World & Christina Aguilera", "Adele"];
+
+let angryTitles = ["House of Wolves", "Down With The Sickness", "Bulls On Parade", "The Fight Song", "Till' I Collapse"];
+let angryArtists = ["My Chemical Romance", "Disturbed", "Rage Against The Machine", "Marilyn Mansion", "Eminem"];
 
 let url = "../music";
 let happyParams = "270deg, #e9ec5e, #ff2278";
 let sadParams = "270deg, #02bee8, #7a33bf";
+let angryParams = "270deg, #840029, #a91834, #f64d52, #fa8989";
 
 
 function initPlayer() {
@@ -26,6 +30,12 @@ function playSad() {
   setTrack("sad");
   setBg("sad");
   togglePlay();
+}
+
+function playAngry() {
+  //setTrack("angry");
+  setBg("angry");
+  //togglePlay();
 }
 
 function togglePlay() {
