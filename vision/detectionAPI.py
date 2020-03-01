@@ -19,7 +19,8 @@ image = vision.types.Image(content=content)
 response = client.face_detection(image=image)
 faceAnnotations = response.face_annotations
 
-likehood = ('Unknown', 'Very Unlikely', 'Unlikely', 'Possibly', 'Likely', 'Very Likely')
+#likehood = ('Unknown', 'Very Unlikely', 'Unlikely', 'Possibly', 'Likely', 'Very Likely')
+likehoodNums = (0,1,2,3,4,5)
 
 #Return variables
 level = 0
@@ -28,26 +29,17 @@ isJoy = ''
 isSad = ''
 
 for face in faceAnnotations:
-    print('Detection Confidence {0}'.format(face.detection_confidence))
-    print('Angry likelyhood: {0}'.format(likehood[face.anger_likelihood]))
-    print('Joy likelyhood: {0}'.format(likehood[face.joy_likelihood]))
-    print('Sorrow likelyhood: {0}'.format(likehood[face.sorrow_likelihood]))
+    #print('Detection Confidence {0}'.format(face.detection_confidence))
+    #print('Angry likelyhood: {0}'.format(likehoodNums[face.anger_likelihood]))
+    #print('Joy likelyhood: {0}'.format(likehoodNums[face.joy_likelihood]))
+    #print('Sorrow likelyhood: {0}'.format(likehoodNums[face.sorrow_likelihood]))
 
 
     level = face.detection_confidence
-    isAngry = likehood[face.anger_likelihood]
-    isJoy = likehood[face.joy_likelihood]
-    isSad = likehood[face.sorrow_likelihood]
+    isAngry = likehoodNums[face.anger_likelihood]
+    isJoy = likehoodNums[face.joy_likelihood]
+    isSad = likehoodNums[face.sorrow_likelihood]
 
-data = {
-    'Confidence Level' : level,
-    'Angry Level' : isAngry,
-    'Joy Level' : isJoy,
-    'Sadness Level' : isSad
-    }
-
-result = firebase.post('/TestData/', data)
-
-print(result)
-
-    
+    list=[isAngry,isJoy,isSad]
+    print(level)
+    print(max(list))
