@@ -5,7 +5,6 @@ import pandas as pd
 
 os.environ['GOOGLE_APPLICATION_CREDENTIALS'] = r'vibe-269707-d1cb5997e2a4.json'
 
-firebase = firebase.FirebaseApplication("https://vibe-269707.firebaseio.com",None)
 
 client = vision.ImageAnnotatorClient()
 
@@ -41,15 +40,5 @@ def detect_faces_uri(uri):
         print(level)
         print(max(list))
     
-    data = {
-        'Confidence Level' : level,
-        'Angry Level' : isAngry,
-        'Joy Level' : isJoy,
-        'Sadness Level' : isSad
-        }
-
-    result = firebase.post('/TestData/', data)
-
-    print(result)
-
+detect_faces_uri('https://firebasestorage.googleapis.com/v0/b/vibe-269707.appspot.com/o/Screen%20Shot%202020-03-01%20at%204.51.43%20AM.png?alt=media&token=8469535c-cb81-4e4c-a79d-a3a9b2806ada')
     
