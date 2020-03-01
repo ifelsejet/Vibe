@@ -11,16 +11,14 @@ client = vision.ImageAnnotatorClient()
 
 def detect_faces_uri(uri):
     """Detects faces in the file located in Google Cloud Storage or the web."""
-    from google.cloud import vision
-    client = vision.ImageAnnotatorClient()
     image = vision.types.Image()
     image.source.image_uri = uri
 
 
-    with io.open(image_path, 'rb') as image_file:
-    content = image_file.read()
+    #with io.open(image_path, 'rb') as image_file:
+    #content = image_file.read()
 
-    image = vision.types.Image(content=content)
+    #image = vision.types.Image(content=content)
     response = client.face_detection(image=image)
     faceAnnotations = response.face_annotations
     
@@ -33,15 +31,15 @@ def detect_faces_uri(uri):
     isSad = ''
 
     for face in faceAnnotations:
-        print('Detection Confidence {0}'.format(face.detection_confidence))
-        print('Angry likelyhood: {0}'.format(likehood[face.anger_likelihood]))
-        print('Joy likelyhood: {0}'.format(likehood[face.joy_likelihood]))
-        print('Sorrow likelyhood: {0}'.format(likehood[face.sorrow_likelihood]))
-    
+        
         level = face.detection_confidence
         isAngry = likehood[face.anger_likelihood]
         isJoy = likehood[face.joy_likelihood]
         isSad = likehood[face.sorrow_likelihood]
+
+        list=[isAngry,isJoy,isSad]
+        print(level)
+        print(max(list))
     
     data = {
         'Confidence Level' : level,
