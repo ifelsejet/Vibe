@@ -28,6 +28,7 @@ def detect_faces_uri(uri):
     isAngry = ''
     isJoy = ''
     isSad = ''
+   # confidence = 0
 
     for face in faceAnnotations:
         
@@ -37,8 +38,18 @@ def detect_faces_uri(uri):
         isSad = likehood[face.sorrow_likelihood]
 
         list=[isAngry,isJoy,isSad]
-        print(level)
-        print(max(list))
+        
+        #print(level)
+       # print(max(list))
+        if(isAngry == max(list)):
+            print('Angry',level,isAngry)
+           
+        elif(isJoy == max(list)):
+            print('Joy',level,isJoy)
+           
+        elif(isSad == max(list)):
+            print('Sad',level,isSad)
+            
     
 detect_faces_uri('https://firebasestorage.googleapis.com/v0/b/vibe-269707.appspot.com/o/Screen%20Shot%202020-03-01%20at%204.51.43%20AM.png?alt=media&token=8469535c-cb81-4e4c-a79d-a3a9b2806ada')
     
