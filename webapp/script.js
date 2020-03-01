@@ -128,25 +128,25 @@ window.addEventListener("load", function(){
       canvas.appendChild(draw);
       
     //  console.log(typeof blob);
-    var storageRef = storage.ref("images/");
-    draw.toBlob(function(blob){
+    // var storageRef = storage.ref("images/");
+    // draw.toBlob(function(blob){
 
-      var image = new Image();
-      var delayInMilliseconds = 1000; //1 second
+    //   var image = new Image();
+    //   var delayInMilliseconds = 1000; //1 second
 
-        setTimeout(function() {
-          //your code to be executed after 1 second
+    //     setTimeout(function() {
+    //       //your code to be executed after 1 second
           
-          image.src = blob;
-        }, delayInMilliseconds);
+    //       image.src = blob;
+    //     }, delayInMilliseconds);
         
-        //var uploadTask = storageRef.put(blob);
+    //     //var uploadTask = storageRef.put(blob);
       
       
       
       
       
-    })
+    // })
     
       /*storageRef.put(IMG_).then(function() {
         console.log("pic ");
