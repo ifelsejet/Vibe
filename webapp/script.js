@@ -105,7 +105,7 @@ window.addEventListener("load", function(){
   // [1] GET ALL THE HTML ELEMENTS
   var video = document.getElementById("vid-show"),
       canvas = document.getElementById("vid-canvas"),
-      take = document.getElementById("vid-take");
+      take = document.getElementById("dl-btn");
 
   // [2] ASK FOR USER PERMISSION TO ACCESS CAMERA
   // WILL FAIL IF NO CAMERA IS ATTACHED TO COMPUTER
@@ -117,6 +117,7 @@ window.addEventListener("load", function(){
 
     // [4] WHEN WE CLICK ON "TAKE PHOTO" BUTTON
     take.addEventListener("click", function(){
+     
       // Create snapshot from video
       var draw = document.createElement("canvas");
       draw.width = video.videoWidth;
@@ -125,7 +126,11 @@ window.addEventListener("load", function(){
       context2D.drawImage(video, 0, 0, video.videoWidth, video.videoHeight);
       // Put into canvas container
       canvas.innerHTML = "";
-      canvas.appendChild(draw);
+     // canvas.appendChild(draw);
+      var imageDataURL = draw.toDataURL("image/png");
+      document.querySelector('#dl-btn').href = imageDataURL;
+
+      
       
     //  console.log(typeof blob);
     // var storageRef = storage.ref("images/");
@@ -163,11 +168,9 @@ window.addEventListener("load", function(){
 
 
 
-
-
 var fileUploadEvent = document.getElementById('browse');
 fileUploadEvent.addEventListener('change', function(e){
-
+var url2;
 var file = e.target.files[0];
 var storageRef = storage.ref(file.name);
 var fileName = "" + file.name;
@@ -178,17 +181,12 @@ var fileName = "" + file.name;
 storageRef.put(file).then(function() {
     
     //get download url for image and store to firestore
-    storage.ref().child(fileName).getDownloadURL().then(function(url) { 
-        var Image = document.getElementById('image')
-        
-        Image.src = url
-        Image.className = "resize";
+    storage.ref().child(fileName).getDownloadURL().then(function(url2) { 
+      console.log(url2)
 
-
-        
             console.log("run bitch");
             db.collection('Posts').doc().set({
-                Img: url
+                Img: url2
                 
             }).then(
                 
@@ -204,3 +202,34 @@ storageRef.put(file).then(function() {
 
   });
 });
+
+function takeSnapshot(){
+
+  var hidden_canvas = document.querySelector('canvas'),
+      video = document.querySelector('video.camera_stream'),
+      image = document.querySelector('img.photo'),
+
+      // Get the exact size of the video element.
+      width = video.videoWidth,
+      height = video.videoHeight,
+
+      // Context object for working with the canvas.
+      context = hidden_canvas.getContext('2d');
+
+  // Set the canvas to the same dimensions as the video.
+  hidden_canvas.width = width;
+  hidden_canvas.height = height;
+
+  // Draw a copy of the current frame from the video on the canvas.
+  context.drawImage(video, 0, 0, width, height);
+
+  // Get an image dataURL from the canvas.
+  var imageDataURL = hidden_canvas.toDataURL('image/png');
+
+  // Set the dataURL as source of an image element, showing the captured photo.
+
+    // Set the href attribute of the download button.
+    document.querySelector('#dl-btn').href = imageDataURL;
+
+
+}
