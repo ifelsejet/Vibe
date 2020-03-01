@@ -9,8 +9,13 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <link rel="stylesheet" href="style.css">
     <link rel="icon" href="./assets/favicon.png" type="image/x-icon">
-    <script src="script.js"></script>
+    
     <link href="https://fonts.googleapis.com/css?family=Oxanium&display=swap" rel="stylesheet">
+
+
+    <script src="https://www.gstatic.com/firebasejs/7.5.2/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.5.2/firebase-firestore.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.5.2/firebase-storage.js"></script>
 
   </head>
   <body onload="initPlayer()" id="bg">
@@ -38,10 +43,13 @@
       <div class="jumbotron-fluid mt-3 pt-3 pb-3 mb-4 mx-auto w-75 text-center border panel rounded-sm justify-content-center" id="vid-controls">
         <video class="mx-auto" id="vid-show" autoplay></video>
         <input id="vid-take" class="btn btn-primary" value="What's the Vibe?"/>
+        <input type="file" value="upload" id="fileUpload" accept="image/*"> 
         <div class="pt-2" id="vid-canvas"></div>
       </div>
 
       <audio src="" id="music"></audio>
     </div>
+    
+    <script src="script.js"></script>
   </body>
 </html>
