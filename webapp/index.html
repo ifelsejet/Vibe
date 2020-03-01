@@ -42,8 +42,11 @@
 
       <div class="jumbotron-fluid mt-3 pt-3 pb-3 mb-4 mx-auto w-75 text-center border panel rounded-sm justify-content-center" id="vid-controls">
         <video class="mx-auto" id="vid-show" autoplay></video>
-        <input id="vid-take" class="btn btn-primary" value="What's the Vibe?"/>
-        <input type="file" value="upload" id="fileUpload" accept="image/*"> 
+        <input id="vid-take" class="btn btn-primary" value="Take a Photo"/>
+        <input id='browse' type='file' style='width:0px'>
+        <button id='browser' onclick='browse.click()'>
+            What's the vibe?
+        </button>
         <div class="pt-2" id="vid-canvas"></div>
       </div>
 

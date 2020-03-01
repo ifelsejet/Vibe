@@ -165,7 +165,7 @@ window.addEventListener("load", function(){
 
 
 
-var fileUploadEvent = document.getElementById('fileUpload');
+var fileUploadEvent = document.getElementById('browse');
 fileUploadEvent.addEventListener('change', function(e){
 
 var file = e.target.files[0];
