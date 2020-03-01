@@ -185,12 +185,9 @@ storageRef.put(file).then(function() {
       console.log(url2)
 
             console.log("run bitch");
-            db.collection('Posts').doc().set({
-                Img: url2
-                
-            }).then(
-                
-            )
+            firebase.database().ref('Posts/info').set({
+                img: url2
+            });
             
             //window.location.href = "../index.html";
         
