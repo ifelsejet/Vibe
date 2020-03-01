@@ -1,15 +1,11 @@
 from firebase import firebase
 
-FirebaseConnection = firebase.FirebaseApplication("https://vibe-269707.firebaseio.com",None)
+firebase = firebase.FirebaseApplication("https://vibe-269707.firebaseio.com",None)
 
+data = {
+    'Temp' : 5
+    }
 
-while True:
-    temperature = int(input("What is the temperature? "))
+result = firebase.post('/TestData/', data)
 
-    data_to_upload = {
-        "Temp" : temperature
-        }
-
-    result = FirebaseConnection.post('/TestData/', data_to_upload)
-
-    print(result)
+print(result)
