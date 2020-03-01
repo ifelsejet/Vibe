@@ -11,7 +11,7 @@ let angryArtists = ["My Chemical Romance", "Disturbed", "Rage Against The Machin
 let url = "../music";
 let happyParams = "270deg, #e9ec5e, #ff2278";
 let sadParams = "270deg, #02bee8, #7a33bf";
-let angryParams = "270deg, #840029, #a91834, #f64d52, #fa8989";
+let angryParams = "270deg, #840029, #a91834, #f64d52";
 
 
 function initPlayer() {
