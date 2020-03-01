@@ -35,10 +35,13 @@
         </div>
       </div>
 
-      <div class="jumbotron-fluid mt-3 pt-3 pb-3 mb-4 mx-auto w-75 text-center border panel rounded-sm justify-content-center" id="vid-controls">
+      <div class="jumbotron-fluid mt-3 pt-4 pb-3 mb-4 mx-auto w-75 text-center border panel rounded-sm justify-content-center" id="vid-controls">
         <video class="mx-auto" id="vid-show" autoplay></video>
-        <input id="vid-take" class="btn btn-primary" value="What's the Vibe?"/>
-        <div class="pt-2" id="vid-canvas"></div>
+        <input id="vid-take" class="btn btn-primary mt-2" value="What's the Vibe?"/>
+
+        <div style="display: none;" class="" id="vid-canvas"></div>
+        <canvas style="display: none; mt-3" id="pic"></canvas>
+        <!--<button class="btn btn-primary" onclick="saveImg();">save please</button>-->
       </div>
 
       <audio src="" id="music"></audio>

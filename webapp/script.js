@@ -78,6 +78,27 @@ function setBg(dir) {
 
 }
 
+function sleep(milliseconds) {
+  const date = Date.now();
+  let currentDate = null;
+  do {
+    currentDate = Date.now();
+  } while (currentDate - date < milliseconds);
+}
+
+function saveImg() {
+  let data = document.getElementById("pic").toDataURL();
+  $.ajax({
+    type: "POST",
+    url: "process.php",
+    data: {
+       imgBase64: data
+    }
+  }).done(function(o) {
+    console.log('saved');
+  });
+}
+
 //VIDEO CODE BELOW
 window.addEventListener("load", function(){
   // [1] GET ALL THE HTML ELEMENTS
@@ -97,14 +118,24 @@ window.addEventListener("load", function(){
     take.addEventListener("click", function(){
       // Create snapshot from video
       var draw = document.createElement("canvas");
-      draw.width = video.videoWidth;
-      draw.height = video.videoHeight;
+    //  draw.width = video.videoWidth;
+    //  draw.height = video.videoHeight;
       var context2D = draw.getContext("2d");
       context2D.drawImage(video, 0, 0, video.videoWidth, video.videoHeight);
+      //hey idk whats going on.... just do it (tm)
+      var pic = document.getElementById("pic");
+      pic.width = video.videoWidth;
+      pic.height = video.videoHeight;
+      var context2D = pic.getContext("2d");
+      context2D.drawImage(video, 0, 0, video.videoWidth, video.videoHeight);
+      pic.style.display = "inline";
       // Put into canvas container
       canvas.innerHTML = "";
       canvas.appendChild(draw);
-    });
+
+      sleep(500);
+      saveImg();
+      });
   })
   .catch(function(err) {
     document.getElementById("vid-controls").innerHTML = "Please enable access and attach a camera";
