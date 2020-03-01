@@ -21,7 +21,7 @@ def detect_faces_uri(uri):
     response = client.face_detection(image=image)
     faceAnnotations = response.face_annotations
     
-    likehood = ('Unknown', 'Very Unlikely', 'Unlikely', 'Possibly', 'Likely', 'Very Likely')
+    likehood = (0, 1, 2, 3, 4, 5)
 
     #Return variables
     level = 0
