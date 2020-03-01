@@ -1,12 +1,14 @@
 //Setting up hard-coded arrays for video playback and video information
-var happyTitles = ["Happy", "Uptown Funk", "CAN'T STOP THE FEELING"];
-var happyArtists = ["Pharrell Williams", "Mark Ronson ft. Bruno Mars", "Justin Timberlake"]
+let happyTitles = ["Happy", "Uptown Funk", "CAN'T STOP THE FEELING"];
+let happyArtists = ["Pharrell Williams", "Mark Ronson ft. Bruno Mars", "Justin Timberlake"]
 
-var sadTitles = ["When I Was Your Man", "i hate u, i love u", "Wake Me Up When September Ends", "Say Something"];
-var sadArtists = ["Bruno Mars", "gnash ft. olivia o-brien", "Green Day", "A Great Big World & Christina Aguilera"];
+let sadTitles = ["When I Was Your Man", "i hate u, i love u", "Wake Me Up When September Ends", "Say Something"];
+let sadArtists = ["Bruno Mars", "gnash ft. olivia o-brien", "Green Day", "A Great Big World & Christina Aguilera"];
 
 let url = "../music";
-//let suffix = "?autoplay=1&muted=0";
+let happyParams = "270deg, #e9ec5e, #ff2278";
+let sadParams = "270deg, #02bee8, #7a33bf";
+
 
 function initPlayer() {
   playHappy();
@@ -16,11 +18,13 @@ function initPlayer() {
 
 function playHappy() {
   setTrack("happy");
+  setBg("happy");
   togglePlay();
 }
 
 function playSad() {
   setTrack("sad");
+  setBg("sad");
   togglePlay();
 }
 
@@ -53,6 +57,15 @@ function setTrack(dir) {
   console.log(url + "/" + dir + "/" + i + ".mp3");
   document.getElementById("title").innerHTML = eval(dir+"Titles")[i];
   document.getElementById("artist").innerHTML = "By: " + eval(dir+"Artists")[i];
+}
+
+function setBg(dir) {
+  var ele = document.getElementById("bg");
+  ele.style.background = "linear-gradient(" + eval(dir + "Params") + ")";
+  //console.log("linear-gradient(" + eval(dir + "Params") + ")");
+  ele.style.animation = "grad 9s ease infinite";
+  ele.style.backgroundSize = "400% 400%";
+
 }
 
 //VIDEO CODE BELOW
