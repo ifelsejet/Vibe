@@ -13,7 +13,7 @@ const firebaseConfig = {
   const storage = firebase.storage();
   const db = firebase.firestore();
 
-  
+
 var fileUploadEvent = document.getElementById('fileUpload');
 fileUploadEvent.addEventListener('change', function(e){
 
@@ -52,3 +52,4 @@ fileUploadEvent.addEventListener('change', function(e){
   
 
   })
+})
