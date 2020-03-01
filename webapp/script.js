@@ -58,7 +58,7 @@ function togglePlay() {
   let ele = document.getElementById("music");
   let btn = document.getElementById("playStatusBtn");
 
-      
+
       if(ele.paused) {
         ele.muted = false;
         ele.play();
@@ -68,7 +68,7 @@ function togglePlay() {
         btn.innerHTML = "Play";
       }
 
- 
+
 }
 
 var prevIndex = -1;
@@ -99,12 +99,25 @@ function setBg(dir) {
 
 }
 
+function saveImg() {
+  let data = document.getElementById("pic").toDataURL();
+  $.ajax({
+    type: "POST",
+    url: "process.php",
+    data: {
+       imgBase64: data
+    }
+  }).done(function(o) {
+    console.log('saved');
+  });
+}
+
 //VIDEO CODE BELOW
 window.addEventListener("load", function(){
   // [1] GET ALL THE HTML ELEMENTS
   var video = document.getElementById("vid-show"),
       canvas = document.getElementById("vid-canvas"),
-      take = document.getElementById("dl-btn");
+      take = document.getElementById("vibeBtn");
 
   // [2] ASK FOR USER PERMISSION TO ACCESS CAMERA
   // WILL FAIL IF NO CAMERA IS ATTACHED TO COMPUTER
@@ -116,21 +129,28 @@ window.addEventListener("load", function(){
 
     // [4] WHEN WE CLICK ON "TAKE PHOTO" BUTTON
     take.addEventListener("click", function(){
-     
+
       // Create snapshot from video
       var draw = document.createElement("canvas");
       draw.width = video.videoWidth;
       draw.height = video.videoHeight;
       var context2D = draw.getContext("2d");
       context2D.drawImage(video, 0, 0, video.videoWidth, video.videoHeight);
+
+      var ele = document.getElementById("pic");
+      context2D = ele.getContext("2d");
+      ele.width = video.videoWidth;
+      ele.height = video.videoHeight;
+      context2D.drawImage(video, 0, 0, video.videoWidth, video.videoHeight);
+
       // Put into canvas container
       canvas.innerHTML = "";
      // canvas.appendChild(draw);
       var imageDataURL = draw.toDataURL("image/png");
       document.querySelector('#dl-btn').href = imageDataURL;
 
-      
-      
+
+
     //  console.log(typeof blob);
     // var storageRef = storage.ref("images/");
     // draw.toBlob(function(blob){
@@ -140,24 +160,24 @@ window.addEventListener("load", function(){
 
     //     setTimeout(function() {
     //       //your code to be executed after 1 second
-          
+
     //       image.src = blob;
     //     }, delayInMilliseconds);
-        
+
     //     //var uploadTask = storageRef.put(blob);
-      
-      
-      
-      
-      
+
+
+
+
+
     // })
-    
+
       /*storageRef.put(IMG_).then(function() {
         console.log("pic ");
       });*/
-      
 
-      
+      saveImg();
+
     });
   })
   .catch(function(err) {
@@ -178,21 +198,21 @@ var fileName = "" + file.name;
 
 //store image in firebase storage
 storageRef.put(file).then(function() {
-    
+
     //get download url for image and store to firestore
-    storage.ref().child(fileName).getDownloadURL().then(function(url2) { 
+    storage.ref().child(fileName).getDownloadURL().then(function(url2) {
       console.log(url2)
 
             console.log("run bitch");
             firebase.database().ref('PiData/NewInfo').set({
                 img: url2
             });
-            
+
             //window.location.href = "../index.html";
-        
-        
-        
-        
+
+
+
+
     })
 
 

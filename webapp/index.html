@@ -9,7 +9,7 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <link rel="stylesheet" href="style.css">
     <link rel="icon" href="./assets/favicon.png" type="image/x-icon">
-    
+
     <link href="https://fonts.googleapis.com/css?family=Oxanium&display=swap" rel="stylesheet">
 
 
@@ -29,31 +29,33 @@
             <h3 id="artist">By: N/A</h3>
           </div>
           <div class="text-center pb-3">
-            <button class="btn btn-outline-light" onclick="togglePlay()" id="playStatusBtn">Play</button>
+            <button class="btn btn-outline-dark" onclick="togglePlay()" id="playStatusBtn">Play</button>
           </div>
 
           <!--Test Buttons-->
-          <button class="btn btn-primary" onclick="playHappy()">Play Happy</button>
-          <button class="btn btn-primary" onclick="playSad()">Play Sad</button>
-          <button class="btn btn-primary" onclick="playAngry()">Play Angry </button>
+          <div class="text-center pb-3">
+            <button class="btn btn-outline-dark" onclick="playHappy()">Play Happy</button>
+            <button class="btn btn-outline-dark" onclick="playSad()">Play Sad</button>
+            <button class="btn btn-outline-dark" onclick="playAngry()">Play Angry </button>
+          </div>
 
         </div>
       </div>
 
       <div class="jumbotron-fluid mt-3 pt-3 pb-3 mb-4 mx-auto w-75 text-center border panel rounded-sm justify-content-center" id="vid-controls">
         <video class="mx-auto" id="vid-show" autoplay></video>
-        <input id="dl-btn" href="#" class="btn btn-primary" download="my-selfie.png" value="Take a Photo"/>
-        <input id='browse' type='file' style='width:0px'>
-        <button id='browser' onclick='browse.click()'>
-            What's the vibe?
-        </button>
-        <div class="pt-2" id="vid-canvas"></div>
-        <input id="snap" class="btn btn-primary" value="Download"/>
+        <br>
+        <input id="dl-btn" href="#" class="btn btn-primary" style="display: none;" download="my-selfie.png" value="Take a Photo"/>
+
+        <button id='vibeBtn' onclick='saveImg();' class="btn btn-primary mt-2">What's the Vibe?</button>
+        <div class="pt-2" id="vid-canvas" style="display: none;"></div>
+        <canvas id="pic" style="display: none;"></canvas>
+
       </div>
 
       <audio src="" id="music"></audio>
     </div>
-    
+
     <script src="script.js"></script>
   </body>
 </html>
