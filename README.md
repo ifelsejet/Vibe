@@ -1,4 +1,4 @@
-# Vibe
+## Vibe | HackMerced 2020 | First Place Health Hack!
 
 ## Inspiration
 Our inspiration for Vibe came after TreeHacks 2020 where we saw a bunch of unique ideas that weren't webapps. After seeing that a unique project could have a large impact, we decided we wanted to expand our skill set by focusing on a hardware hack, while also learning some software on the side.
@@ -32,3 +32,5 @@ Yash:  I learned what GCP Cloud Functions are and how to use them in our project
 - Expand the range of music, maybe even incorporate the Spotify API to get a wide variety of song choices.
 - Currently, the overall emotion of the song is hard determined by us, maybe in the future we can get this to be based off of Spotify's song info.
 - Get the LED wire strip to work!
+
+##Images
