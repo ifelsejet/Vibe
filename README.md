@@ -33,4 +33,4 @@ Yash:  I learned what GCP Cloud Functions are and how to use them in our project
 - Currently, the overall emotion of the song is hard determined by us, maybe in the future we can get this to be based off of Spotify's song info.
 - Get the LED wire strip to work!
 
-##Images
+## Images
