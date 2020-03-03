@@ -1,4 +1,4 @@
-## Vibe
+# Vibe
 
 ## Inspiration
 Our inspiration for Vibe came after TreeHacks 2020 where we saw a bunch of unique ideas that weren't webapps. After seeing that a unique project could have a large impact, we decided we wanted to expand our skill set by focusing on a hardware hack, while also learning some software on the side.
